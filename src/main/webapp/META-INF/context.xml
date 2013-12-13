@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="/ExcerptApp">
+    <Resource name="ameerdb"
+    auth="Container"
+    type="javax.sql.DataSource"
+    username="SA"
+    password=""
+    driverClassName="org.hsqldb.jdbcDriver"	
+    url="jdbc:hsqldb:hsql://82.165.173.127/testdb"
+    maxActive="20"
+    maxIdle="4"/>
+</Context>
