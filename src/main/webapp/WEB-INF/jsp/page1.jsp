@@ -23,7 +23,7 @@
             <tr>    
                 <td> <c:out value="${ameerlist.account}"></c:out> </td>
                 <td> <c:out value="${ameerlist.id.excerpt}"></c:out></td>
-                 <td> <c:out value="${ameerlist.comments}"></c:out></td>
+                <td><c:out value="${ameerlist.comments}"></c:out></div></td>
                  <td> <c:out value="${ameerlist.link}"></c:out></td>
                  <td><fmt:formatDate type="both" value="${ameerlist.date}"/></td>
                

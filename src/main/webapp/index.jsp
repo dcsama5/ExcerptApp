@@ -9,5 +9,10 @@
     </head>
     <body>
         <h1>Hello World!eqweqweqweqweqweqweq</h1>
+        <form>
+            Username:<input type ="text" name="usr"><br />
+            Password:<input type="password" name="pwd">
+            <input type="submit" value="login"/>
+        </form>
     </body>
 </html>
