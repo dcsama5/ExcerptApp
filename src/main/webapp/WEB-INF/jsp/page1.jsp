@@ -15,7 +15,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World! I am Gay and this works. Gay times. Yolanda be tripping</h1>
+        <h1>Hello World!</h1>
          <table cellspacing="15">
         <c:forEach items="${AMEER}" var="ameerlist">
             <c:set var="show" value="${ameerlist.show}"/>

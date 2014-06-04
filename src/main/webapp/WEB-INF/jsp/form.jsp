@@ -30,7 +30,7 @@
             </tr>
             <tr>
                 <th><label for="comments">COMMENTS</label></th>
-            <td><div contenteditable="true" ></td></div>
+                <td><sf:textarea path="comments" id="comments"/></td></div>
             </tr>
             <tr>
                 <th><label for="show">SHOW</label></th>
