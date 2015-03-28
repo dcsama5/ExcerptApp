@@ -25,8 +25,6 @@ public class HibernateExcerptSpitter implements ExcerptSpitterDAO {
     private SessionFactory sessionFactory;
     
     public Session currentSession() {
-    
-        
        return sessionFactory.getCurrentSession();
     }
 
@@ -41,27 +39,16 @@ public class HibernateExcerptSpitter implements ExcerptSpitterDAO {
         currentSession().save(exc);
     }
 
-    public boolean createTable() {
-
-    return false;
-    }
-
     public void removeExcerpt(Excerpt exc) {
-        currentSession().delete(exc);
-       
+        currentSession().delete(exc);  
     }
 
     public void updateExcerpt(Excerpt exc) {
     currentSession().update(exc);
     }
 
-    public void setSpitterTemplate(JdbcTemplate jdbcTemplate) {
-
-    }
-
     public List<Excerpt> getExcerptbyAccountName(String name)
-    {
-        
+    {   
         return (List<Excerpt>) currentSession().get(List.class, name);
     }
     /**
@@ -69,17 +56,10 @@ public class HibernateExcerptSpitter implements ExcerptSpitterDAO {
      * relationship.
      * @return Map of the object
      */
-    @Override
     public Map<String, Object> getMappedExcerpt() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    @Override
-    public Object getEntity(ExcerptIdentifier id) {
-       return currentSession().byId(Excerpt.class).getReference(id);
-    }
-
-    @Override
     public List retrieveByDate(String name) {
         List objects = currentSession().createQuery("FROM Excerpt E WHERE E.account = ? ORDER BY Date DESC").setString(0, name).list();
         return objects;
@@ -94,7 +74,17 @@ public class HibernateExcerptSpitter implements ExcerptSpitterDAO {
         public void addAccessor(Accessor accessor) {
         currentSession().save(accessor);
     }
+
+    public List<Excerpt> searchByAccount() {
+    	// TODO Auto-generated method stub
+    	return null;
+    }
+    public void load(String param, Excerpt excerpt) {
+        currentSession().load(excerpt, param);
+    }
     
+    public Excerpt get(String param) {
+        return (Excerpt)currentSession().get(Excerpt.class, param);
+    }
     
-  
 }

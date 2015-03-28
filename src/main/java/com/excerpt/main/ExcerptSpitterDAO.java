@@ -14,15 +14,14 @@ import org.springframework.jdbc.core.JdbcTemplate;
  */
 public interface ExcerptSpitterDAO {
     
-    public void setSpitterTemplate(JdbcTemplate jdbcTemplate);
     public void addExcerpt(Excerpt exc);
-    public boolean createTable();
     public void removeExcerpt(Excerpt exc);
     public void updateExcerpt(Excerpt exc);
     public Map<String, Object> getMappedExcerpt();
-    public Object getEntity(ExcerptIdentifier id);
     public List retrieveByDate(String name);
     public List retrieveAll();
     public void addAccessor(Accessor accessor);
-    
+    public List<Excerpt> searchByAccount();
+    public void load(String param, Excerpt excerpt);
+    public Excerpt get(String param);
 }

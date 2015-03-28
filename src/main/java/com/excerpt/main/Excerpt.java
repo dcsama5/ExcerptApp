@@ -4,10 +4,13 @@ package com.excerpt.main;/*
  */
 
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.Date;
-import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import static junit.runner.Version.id;
 
 /**
  *
@@ -19,7 +22,20 @@ public class Excerpt implements Serializable {
     
     private String account;
     private boolean show;
+    
+    @Id
+    private String Excerpt;
+    @Temporal(javax.persistence.TemporalType.TIMESTAMP)
+    private Date date;
 
+    public String getExcerpt() {
+        return Excerpt;
+    }
+
+    public void setExcerpt(String Excerpt) {
+        this.Excerpt = Excerpt;
+    }
+    
     public boolean isShow() {
         return show;
     }
@@ -27,26 +43,14 @@ public class Excerpt implements Serializable {
     public void setShow(boolean show) {
         this.show = show;
     }
-
-    @EmbeddedId
-            ExcerptIdentifier id;
+        
     
     
     private String link;
     public void setLink(String link) {
         this.link = link;
     }
-    
-    public void setId(ExcerptIdentifier id)
-    {
-          
-        this.id = id;
-    }
-    
-    public ExcerptIdentifier getId()
-    {
-        return this.id;
-    }
+
     public String getLink() {
         return link;
     }
@@ -56,13 +60,12 @@ public class Excerpt implements Serializable {
      * This method sets the date to the current DateTime 
      */
     public void setDate() {
-        id.setDate();
-        
+        date = Calendar.getInstance().getTime();  
     }
     
     public Date getDate() {
         
-        return id.getDate();
+        return this.date;
     }
     /*    private Date date;
      *
